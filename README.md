@@ -1,6 +1,5 @@
 # app-nab-server
-This is the server section of \"nab\" application.  <br/>
-Written using Nodejs.
+This is the server section of \"nab\" application. Written using Nodejs.
 
 CORS limitiations forces our application must be located insind an OBIEE server.it is not a good pattern.  <br/>  <br/>
 
