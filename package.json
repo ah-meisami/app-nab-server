@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ah-meisami/app-nab-server/issues"
   },
-  "homepage": "https://github.com/ah-meisami/app-nab-server#readme"
+  "homepage": "https://github.com/ah-meisami/app-nab-server#readme",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
 }
