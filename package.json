@@ -1,0 +1,22 @@
+{
+  "name": "app-nab-server",
+  "version": "1.0.0",
+  "description": "This is the server section of \"nab\" application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ah-meisami/app-nab-server.git"
+  },
+  "keywords": [
+    "nab"
+  ],
+  "author": "Amir Hossein Meisami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ah-meisami/app-nab-server/issues"
+  },
+  "homepage": "https://github.com/ah-meisami/app-nab-server#readme"
+}
