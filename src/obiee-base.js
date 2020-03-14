@@ -34,8 +34,10 @@ class ObieeBase {
 
 	wsCall(service, payload, successFunc, errorFunc) {
 		let url = this.obieeURL + '?SOAPImpl=' + service;
+		this.soapRequest(url, payload, successFunc);
+	}
 
-
+	soapRequest(url, payload, successFunc) {
 		let xmlhttp = new XMLHttpRequest();
 		xmlhttp.open('POST', url, true);
 
@@ -52,7 +54,6 @@ class ObieeBase {
 		xmlhttp.setRequestHeader('Content-Type', 'text/xml');
 		xmlhttp.send(payload);
 	}
-
 }
 
 module.exports.ObieeBase = ObieeBase;
