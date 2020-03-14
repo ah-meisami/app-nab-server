@@ -21,3 +21,9 @@ const obiee = new ObieeSession();
 const x = obiee.logon('weblogic', 'ora2200\$\$', response => {
 	console.log(response);
 });
+
+
+/*
+execute like this:
+node.exe .\src\obiee-session.js
+*/
