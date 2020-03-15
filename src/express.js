@@ -1,5 +1,4 @@
 const { ObieeBase } = require('./obiee-base');
-
 var express = require('express')
 var app = express()
 var cors = require('cors')
@@ -28,10 +27,9 @@ app.post('/getObieeRes/', function (req, res, next) {
   const payload = req.rawBody;
 
   obieeBase.wsCall(service, payload, response => {
-	  console.log(response);
+    res.type('application/xml'); //set the server response as xml.
+    res.send(response);
   });
-
-  res.json({ msg: 'This is CORS-enabled for all origins!' })
 })
 
 app.listen(port, function () {
@@ -45,4 +43,17 @@ for execution:
 2.in Postman create a POST request: http://localhost:3002/getObieeRes/
 3.in Postman create new query parameter: service = nQSessionService
 4.in Postman put sample raw body: <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v12="urn://oracle.bi.webservices/v12" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><v12:logon><v12:name>weblogic</v12:name><v12:password>ora2200$$</v12:password></v12:logon></soapenv:Body></soapenv:Envelope>
+
+
+for execution:
+http://localhost:3002/getObieeRes/?service=metadataService
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v12="urn://oracle.bi.webservices/v12">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v12:getSubjectAreas>
+         <v12:sessionID>fdu3vnhoi0sil5rjmht036p0d32dqbt6alciv73kpnp4l6ip</v12:sessionID>
+      </v12:getSubjectAreas>
+   </soapenv:Body>
+</soapenv:Envelope>
 */

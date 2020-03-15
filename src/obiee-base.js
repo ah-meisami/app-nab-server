@@ -1,3 +1,4 @@
+const decode = require('unescape');
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const { parseString } = require('xml2js');
 
@@ -45,7 +46,7 @@ class ObieeBase {
 		xmlhttp.onreadystatechange = () => {
 			if (xmlhttp.readyState == 4) {
 				if (xmlhttp.status == 200) {
-					successFunc(xmlhttp.responseText);
+					successFunc(decode(xmlhttp.responseText));
 				}
 			}
 		}
