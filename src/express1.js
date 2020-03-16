@@ -30,31 +30,11 @@ app.post('/getObieeRes/', function (req, res, next) {
     res.type('application/xml'); //set the server response as xml.
     res.send(response);
   });
-})
-
-app.post('/getSubjectAreas', function (req, res, next) {
-  var soap = require('soap');
-  var url = 'http://192.168.234.130:9502/analytics-ws/saw.dll/wsdl/v12';
-
-  var args = {
-    sessionID: 'su51td2ro73je5ot15nq45744jldo3kjs3ppb228f0nrtr8u'
-  };
-
-  soap.createClient(url, (err, client) => {
-    client.getSubjectAreas(args, (err, result) => {
-      res.type('application/json'); //set the server response as xml.
-      res.send(result);
-      console.log(Object.keys(result.subjectArea).length);
-    });
-  });
-
-
-
-})
+});
 
 app.listen(port, function () {
   console.log(`CORS-enabled web server listening on port ${port}`)
-})
+});
 
 
 /*
