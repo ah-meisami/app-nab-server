@@ -105,6 +105,22 @@ async function run() {
     for (let row of result.rows)
       console.log(row[0]);
 
+    console.log('5. Create an array of objects');
+    result = await connection.execute(`
+      select JSON_OBJECT(
+      'id' value employee_id ,
+      'fname' value first_name ,
+      'lname' value last_name ,
+      'email' value email ,
+      'phone' value phone_number
+      )  as x from EMPLOYEES e
+    `);
+    let arr = [];
+    for (let row of result.rows) {
+      const obj = row[0];
+      arr.push(obj)
+    }
+    console.log('Array Length:', arr.length);
   } catch (err) {
     console.error(err);
   } finally {
