@@ -21,7 +21,7 @@
   "homepage": "https://github.com/ah-meisami/app-nab-server#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "node-soap": "^1.0.0",
     "oracledb": "^4.2.0",
     "unescape": "^1.0.1",
